@@ -33,16 +33,21 @@ function MyTrips() {
     setUserTrips(prevVal=>[...prevVal,doc.data()])
     });
   }
+
+  const handleTripDeleted = (deletedTripId) => {
+    setUserTrips(userTrips.filter((trip) => trip.id !== deletedTripId));
+  }
+
   return (
     <div className='sm:px-10 md:px-32 lg:px-56 xl:px-10 px-5 mt-10'>
      <h2 className='font-bold text-3xl'>My Trips</h2> 
      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-5'>
       {userTrips?.length>0 ? userTrips.map((trip,index)=>(
-        <UserTripCardItem trip={trip} key={index} className=""/>
+        <UserTripCardItem trip={trip} key={index} onDelete={handleTripDeleted} className=""/>
       ))
       :[1,2,3,4,5,6].map((item,index)=>(
         <div key={index} className='h-[250px] w-full bg-slate-200 p-5 rounded-xl shadow-md animate-pulse'>
-
+        
         </div>
       ))}
      </div>
