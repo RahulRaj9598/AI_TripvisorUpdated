@@ -9,6 +9,7 @@ import { Toaster } from 'sonner'
 import { GoogleOAuthProvider } from "@react-oauth/google"
 import ViewTrip from './view-trip/[tripId]'
 import MyTrips from './my-trips'
+import FavoriteTrips from './favorite-trips'
 
 const router=createBrowserRouter([
   {
@@ -26,7 +27,12 @@ const router=createBrowserRouter([
   {
     path:'/my-trips',
     element:<MyTrips/>
+  },
+  {
+    path: "/favorite-trips",
+    element: <FavoriteTrips />
   }
+  
 
 ])
 createRoot(document.getElementById('root')).render(

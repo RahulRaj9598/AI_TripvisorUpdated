@@ -27,6 +27,7 @@ Hotel Options: Provide at least 6 Hotel options, each with: HotelName, Hotel add
 Itinerary Options: Suggest an itinerary, broken down day-wise, with a proper plan for each day, and including bestTimeToVisit for each day. For each location within the itinerary, include the following: day,placeName, Place Details, Place Image Url, Geo Coordinates (latitude and longitude), ticket Pricing, travelTimeNext (the time to travel to the next location). In addition, for each location in the itinerary, include a timeSpan (e.g., "9:00 AM - 10:00 AM") indicating the estimated duration of the visit and include the time start of the day as 9:00 AM and end at latest by 10:00 PM
 
 Notes: suggest 8-10 notes regarding the trip`
+
   
   export const chatSession = model.startChat({
     generationConfig,

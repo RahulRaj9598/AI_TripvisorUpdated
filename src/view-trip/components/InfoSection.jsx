@@ -3,11 +3,9 @@ import { IoIosSend } from "react-icons/io";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { useLocation } from "react-router-dom";
-import { GetPlaceDetails } from "@/service/GlobalApi";
+import { GetPlaceDetails, PHOTO_REF_URL } from "@/service/GlobalApi";
 
-const PHOTO_REF_URL =
-  "https://places.googleapis.com/v1/NAME/media?maxHeightPx=1000&maxWidthPx=1000&key=" +
-  import.meta.env.VITE_GOOGLE_PLACE_API_KEY;
+
 
 function InfoSection({ trip }) {
   const [photoUrl, setPhotoUrl] = useState(null);
@@ -62,15 +60,18 @@ function InfoSection({ trip }) {
 
   return (
     <div>
-      <img
+    <div className="flex justify-center">
+    <img
         src={photoUrl}
         key={photoUrl}
-        className=" w-full object-contain rounded-xl "
+        className="h-[400px]  oject-contain rounded-xl transition-all hover:opacity-85"
         onError={(e) => {
         console.error("Image load failed:", e.target.src);
         
       }}
       />
+    </div>
+      
 
       <div className="flex justify-between items-center ">
         <div className="my-5 flex flex-col gap-2">

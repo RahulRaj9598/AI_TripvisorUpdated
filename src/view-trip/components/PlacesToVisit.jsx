@@ -100,7 +100,7 @@ function PlacesToVisit({trip}) {
   return (
     <div className="max-w-7xl mx-auto py-8">
       <h2 className="text-3xl font-bold text-gray-900 mb-8">Places to Visit</h2>
-      <div className="space-y-8">
+      <div className="space-y-8 ">
         {itineraryDays.map(([day, dayData], index) => (
           <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden">
             <div className="bg-orange-500 px-6 py-4">
@@ -124,13 +124,23 @@ function PlacesToVisit({trip}) {
                   className="block"
                 >
                   <div className="mb-8 last:mb-0">
-                    <div className="flex flex-col md:flex-row gap-6">
+                  <div className="flex flex-col md:flex-row gap-6 p-4 rounded-2xl 
+  transform transition-all duration-300 ease-out 
+  hover:scale-[1.03] hover:-translate-y-1 
+  hover:shadow-lg hover:shadow-green-300/40 
+  hover:bg-gradient-to-b hover:from-green-100 hover:to-white 
+  group relative
+  before:absolute before:inset-x-0 before:bottom-0 before:h-[2px] 
+  before:bg-gradient-to-r before:from-transparent before:via-green-400 before:to-transparent 
+  before:opacity-0 hover:before:opacity-100 before:transition-opacity"
+>
+
                       {/* Image Section */}
                       <div className="w-full md:w-1/3">
                         <img 
                           src={placePhotos[location.placeName] } 
                           alt={location.placeName}
-                          className="w-full h-48 object-cover rounded-lg"
+                          className="w-full h-48 object-cover rounded-lg hover:opacity-85 transition-all"
                           onError={(e) => {
                             e.target.onerror = null;
                             e.target.src = '/placeholder.jpeg';
@@ -149,6 +159,15 @@ function PlacesToVisit({trip}) {
 
                         {/* Details Grid */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                          {/* Time Span */}
+                          <div className="flex items-center space-x-2">
+                            <svg className="w-5 h-5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span className="text-gray-700 bg-green-200 px-2  rounded-sm">{location.timeSpan}</span>
+                          </div>
+
                           {/* Pricing */}
                           <div className="flex items-center space-x-2">
                             <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -165,26 +184,9 @@ function PlacesToVisit({trip}) {
                             <span className="text-gray-700">{location.travelTimeNext}</span>
                           </div>
 
-                          {/* Time Span */}
-                          <div className="flex items-center space-x-2">
-                            <svg className="w-5 h-5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            <span className="text-gray-700">{location.timeSpan}</span>
-                          </div>
+                          
 
-                          {/* Location */}
-                          {location.geoCoordinates && (
-                            <div className="flex items-center space-x-2">
-                              <svg className="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                              </svg>
-                              <span className="text-gray-700">
-                                {location.geoCoordinates.latitude.toFixed(4)}, {location.geoCoordinates.longitude.toFixed(4)}
-                              </span>
-                            </div>
-                          )}
+                          
                         </div>
                       </div>
                     </div>
