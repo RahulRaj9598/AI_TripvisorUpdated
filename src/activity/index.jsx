@@ -20,7 +20,7 @@ const ActivityFeed = () => {
         return;
       }
 
-      const response = await fetch('http://localhost:3001/api/users/activity/feed', {
+      const response = await fetch('https://ai-tripvisorupdated-1.onrender.com/api/users/activity/feed', {
         headers: {
           'Authorization': `Bearer ${token}`
         }

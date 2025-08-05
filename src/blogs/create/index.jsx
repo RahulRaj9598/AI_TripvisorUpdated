@@ -168,7 +168,7 @@ const CreateBlog = () => {
         formDataToSend.append('images', image);
       });
 
-      const response = await fetch('http://localhost:3001/api/blogs', {
+      const response = await fetch('https://ai-tripvisorupdated-1.onrender.com/api/blogs', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`
@@ -181,7 +181,7 @@ const CreateBlog = () => {
         
         // Create poll if included
         if (includePoll) {
-          const pollResponse = await fetch(`http://localhost:3001/api/blogs/${data._id}/poll`, {
+          const pollResponse = await fetch(`https://ai-tripvisorupdated-1.onrender.com/api/blogs/${data._id}/poll`, {
             method: 'POST',
             headers: {
               'Authorization': `Bearer ${token}`,

@@ -73,7 +73,7 @@ const GroupDetail = () => {
       const token = localStorage.getItem('token');
       const headers = token ? { 'Authorization': `Bearer ${token}` } : {};
       
-      const response = await fetch(`http://localhost:3001/api/groups/${groupId}`, {
+      const response = await fetch(`https://ai-tripvisorupdated-1.onrender.com/api/groups/${groupId}`, {
         headers
       });
       
@@ -158,7 +158,7 @@ const GroupDetail = () => {
       const token = localStorage.getItem('token');
       const headers = token ? { 'Authorization': `Bearer ${token}` } : {};
       
-      const response = await fetch(`http://localhost:3001/api/groups/${groupId}`, {
+      const response = await fetch(`https://ai-tripvisorupdated-1.onrender.com/api/groups/${groupId}`, {
         headers
       });
 
@@ -195,7 +195,7 @@ const GroupDetail = () => {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:3001/api/groups/${groupId}/join`, {
+      const response = await fetch(`https://ai-tripvisorupdated-1.onrender.com/api/groups/${groupId}/join`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -224,7 +224,7 @@ const GroupDetail = () => {
   const handleLeaveGroup = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:3001/api/groups/${groupId}/leave`, {
+      const response = await fetch(`https://ai-tripvisorupdated-1.onrender.com/api/groups/${groupId}/leave`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -265,7 +265,7 @@ const GroupDetail = () => {
     try {
       setSubmittingDiscussion(true);
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:3001/api/groups/${groupId}/discussions`, {
+      const response = await fetch(`https://ai-tripvisorupdated-1.onrender.com/api/groups/${groupId}/discussions`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -306,7 +306,7 @@ const GroupDetail = () => {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:3001/api/groups/${groupId}/discussions/${discussionId}/replies`, {
+      const response = await fetch(`https://ai-tripvisorupdated-1.onrender.com/api/groups/${groupId}/discussions/${discussionId}/replies`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -346,7 +346,7 @@ const GroupDetail = () => {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:3001/api/groups/${groupId}/discussions/${discussionId}/like`, {
+      const response = await fetch(`https://ai-tripvisorupdated-1.onrender.com/api/groups/${groupId}/discussions/${discussionId}/like`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -380,7 +380,7 @@ const GroupDetail = () => {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:3001/api/groups/${groupId}`, {
+      const response = await fetch(`https://ai-tripvisorupdated-1.onrender.com/api/groups/${groupId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`

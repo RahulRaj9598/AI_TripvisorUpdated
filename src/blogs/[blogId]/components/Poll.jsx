@@ -36,7 +36,7 @@ const Poll = ({ blogId, blog, user, onPollUpdate }) => {
   const fetchPollResults = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:3001/api/blogs/${blogId}/poll`, {
+      const response = await fetch(`https://ai-tripvisorupdated-1.onrender.com/api/blogs/${blogId}/poll`, {
         headers: token ? { 'Authorization': `Bearer ${token}` } : {}
       });
 
@@ -64,7 +64,7 @@ const Poll = ({ blogId, blog, user, onPollUpdate }) => {
     try {
       setLoading(true);
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:3001/api/blogs/${blogId}/poll`, {
+      const response = await fetch(`https://ai-tripvisorupdated-1.onrender.com/api/blogs/${blogId}/poll`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -100,7 +100,7 @@ const Poll = ({ blogId, blog, user, onPollUpdate }) => {
     try {
       setLoading(true);
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:3001/api/blogs/${blogId}/poll/vote`, {
+      const response = await fetch(`https://ai-tripvisorupdated-1.onrender.com/api/blogs/${blogId}/poll/vote`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -130,7 +130,7 @@ const Poll = ({ blogId, blog, user, onPollUpdate }) => {
     try {
       setLoading(true);
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:3001/api/blogs/${blogId}/poll/end`, {
+      const response = await fetch(`https://ai-tripvisorupdated-1.onrender.com/api/blogs/${blogId}/poll/end`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`,

@@ -81,7 +81,7 @@ const Profile = () => {
 
       // Fetch detailed profile data
       if (user._id && user._id !== 'undefined') {
-        const response = await fetch(`http://localhost:3001/api/users/${user._id}`, {
+        const response = await fetch(`https://ai-tripvisorupdated-1.onrender.com/api/users/${user._id}`, {
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -188,7 +188,7 @@ const Profile = () => {
         formDataToSend.append('image', profileImage);
       }
 
-      const response = await fetch('http://localhost:3001/api/users/profile', {
+      const response = await fetch('https://ai-tripvisorupdated-1.onrender.com/api/users/profile', {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`

@@ -58,7 +58,7 @@ const Blogs = () => {
       if (search) params.append('search', search);
       if (category) params.append('category', category);
 
-      const response = await fetch(`http://localhost:3001/api/blogs?${params}`);
+      const response = await fetch(`https://ai-tripvisorupdated-1.onrender.com/api/blogs?${params}`);
       const data = await response.json();
 
       if (response.ok) {
@@ -83,7 +83,7 @@ const Blogs = () => {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:3001/api/blogs/${blogId}/like`, {
+      const response = await fetch(`https://ai-tripvisorupdated-1.onrender.com/api/blogs/${blogId}/like`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -109,7 +109,7 @@ const Blogs = () => {
 
   const handleShare = async (blogId) => {
     try {
-      const response = await fetch(`http://localhost:3001/api/blogs/${blogId}/share`, {
+      const response = await fetch(`https://ai-tripvisorupdated-1.onrender.com/api/blogs/${blogId}/share`, {
         method: 'POST'
       });
 

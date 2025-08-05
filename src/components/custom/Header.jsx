@@ -76,7 +76,7 @@ function Header() {
 
           const parsedUser = JSON.parse(userData);
           if (parsedUser._id && parsedUser._id !== 'undefined') {
-            const response = await fetch(`http://localhost:3001/api/users/${parsedUser._id}`, {
+            const response = await fetch(`https://ai-tripvisorupdated-1.onrender.com/api/users/${parsedUser._id}`, {
               headers: {
                 'Authorization': `Bearer ${token}`
               }
@@ -162,7 +162,7 @@ function Header() {
       localStorage.setItem("token", tokenInfo?.access_token);
 
       // Now authenticate with our backend to create/get user
-      const authResponse = await fetch('http://localhost:3001/api/users/auth', {
+      const authResponse = await fetch('https://ai-tripvisorupdated-1.onrender.com/api/users/auth', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

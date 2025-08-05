@@ -76,7 +76,7 @@ const BlogDetail = () => {
       const token = localStorage.getItem('token');
       const headers = token ? { 'Authorization': `Bearer ${token}` } : {};
       
-          const response = await fetch(`http://localhost:3001/api/blogs/${blogId}`, {
+          const response = await fetch(`https://ai-tripvisorupdated-1.onrender.com/api/blogs/${blogId}`, {
       headers
     });
       
@@ -103,7 +103,7 @@ const BlogDetail = () => {
       const token = localStorage.getItem('token');
       const headers = token ? { 'Authorization': `Bearer ${token}` } : {};
       
-      const response = await fetch(`http://localhost:3001/api/blogs/${blogId}`, {
+      const response = await fetch(`https://ai-tripvisorupdated-1.onrender.com/api/blogs/${blogId}`, {
         headers
       });
       
@@ -149,7 +149,7 @@ const BlogDetail = () => {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:3001/api/blogs/${blogId}/like`, {
+      const response = await fetch(`https://ai-tripvisorupdated-1.onrender.com/api/blogs/${blogId}/like`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -176,7 +176,7 @@ const BlogDetail = () => {
   const handleShare = async () => {
     try {
       // First, increment the share count on the backend
-      const response = await fetch(`http://localhost:3001/api/blogs/${blogId}/share`, {
+      const response = await fetch(`https://ai-tripvisorupdated-1.onrender.com/api/blogs/${blogId}/share`, {
         method: 'POST'
       });
 
@@ -247,7 +247,7 @@ const BlogDetail = () => {
     try {
       setSubmittingComment(true);
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:3001/api/blogs/${blogId}/comments`, {
+      const response = await fetch(`https://ai-tripvisorupdated-1.onrender.com/api/blogs/${blogId}/comments`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -299,7 +299,7 @@ const BlogDetail = () => {
   const handleDeleteComment = async (commentId) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:3001/api/blogs/${blogId}/comments/${commentId}`, {
+      const response = await fetch(`https://ai-tripvisorupdated-1.onrender.com/api/blogs/${blogId}/comments/${commentId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`
@@ -328,7 +328,7 @@ const BlogDetail = () => {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:3001/api/blogs/${blogId}`, {
+      const response = await fetch(`https://ai-tripvisorupdated-1.onrender.com/api/blogs/${blogId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`

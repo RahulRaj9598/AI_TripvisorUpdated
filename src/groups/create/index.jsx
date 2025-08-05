@@ -116,7 +116,7 @@ const CreateGroup = () => {
         formDataToSend.append('image', coverImage);
       }
 
-      const response = await fetch('http://localhost:3001/api/groups', {
+      const response = await fetch('https://ai-tripvisorupdated-1.onrender.com/api/groups', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`

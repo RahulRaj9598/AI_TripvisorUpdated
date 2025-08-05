@@ -1,7 +1,7 @@
 // API Configuration
-const API_BASE_URL = import.meta.env.DEV 
+export const API_BASE_URL = import.meta.env.DEV 
   ? 'http://localhost:3001/api' 
-  : 'https://ai-tripvisor-1.onrender.com/api';
+  : 'https://ai-tripvisorupdated-1.onrender.com/api';
 
 // Utility function for making authenticated API calls
 export const makeAuthenticatedRequest = async (url, options = {}) => {

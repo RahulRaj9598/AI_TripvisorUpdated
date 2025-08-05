@@ -17,7 +17,7 @@ const config={
 // export const GetPlaceDetails=(data)=>axios.post(BASE_URL,data,config)
 export const GetPlaceDetails = (data) =>{
   console.log("Sending request to backend with data:", data);
-  return axios.post("https://ai-tripvisor-1.onrender.com/api/getPlaceDetails", data);
+  return axios.post("https://ai-tripvisorupdated-1.onrender.com/api/getPlaceDetails", data);
 }
   
 

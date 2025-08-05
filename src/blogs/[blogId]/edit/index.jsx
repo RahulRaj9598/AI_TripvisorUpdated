@@ -59,7 +59,7 @@ const EditBlog = () => {
       const token = localStorage.getItem('token');
       const headers = token ? { 'Authorization': `Bearer ${token}` } : {};
       
-      const response = await fetch(`http://localhost:3001/api/blogs/${blogId}`, {
+      const response = await fetch(`https://ai-tripvisorupdated-1.onrender.com/api/blogs/${blogId}`, {
         headers
       });
       
@@ -152,7 +152,7 @@ const EditBlog = () => {
   const deletePoll = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:3001/api/blogs/${blogId}/poll`, {
+      const response = await fetch(`https://ai-tripvisorupdated-1.onrender.com/api/blogs/${blogId}/poll`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`
@@ -219,7 +219,7 @@ const EditBlog = () => {
         formDataToSend.append('images', file);
       });
 
-      const response = await fetch(`http://localhost:3001/api/blogs/${blogId}`, {
+      const response = await fetch(`https://ai-tripvisorupdated-1.onrender.com/api/blogs/${blogId}`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`
@@ -230,7 +230,7 @@ const EditBlog = () => {
       if (response.ok) {
         // Update poll if it has data
         if (hasPoll) {
-          const pollResponse = await fetch(`http://localhost:3001/api/blogs/${blogId}/poll`, {
+          const pollResponse = await fetch(`https://ai-tripvisorupdated-1.onrender.com/api/blogs/${blogId}/poll`, {
             method: 'POST',
             headers: {
               'Authorization': `Bearer ${token}`,

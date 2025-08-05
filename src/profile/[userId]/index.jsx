@@ -48,7 +48,7 @@ const UserProfile = () => {
         const token = localStorage.getItem('token');
         const headers = token ? { 'Authorization': `Bearer ${token}` } : {};
         
-        const response = await fetch(`http://localhost:3001/api/users/${userId}`, {
+        const response = await fetch(`https://ai-tripvisorupdated-1.onrender.com/api/users/${userId}`, {
           headers
         });
         
@@ -97,7 +97,7 @@ const UserProfile = () => {
       const token = localStorage.getItem('token');
       const headers = token ? { 'Authorization': `Bearer ${token}` } : {};
       
-      const response = await fetch(`http://localhost:3001/api/users/${userId}`, {
+      const response = await fetch(`https://ai-tripvisorupdated-1.onrender.com/api/users/${userId}`, {
         headers
       });
       
@@ -124,7 +124,7 @@ const UserProfile = () => {
 
   const fetchUserBlogs = async () => {
     try {
-      const response = await fetch(`http://localhost:3001/api/blogs/user/${userId}?page=1&limit=6`);
+      const response = await fetch(`https://ai-tripvisorupdated-1.onrender.com/api/blogs/user/${userId}?page=1&limit=6`);
       if (response.ok) {
         const data = await response.json();
         setBlogs(data.blogs);
@@ -139,7 +139,7 @@ const UserProfile = () => {
       const token = localStorage.getItem('token');
       const headers = token ? { 'Authorization': `Bearer ${token}` } : {};
       
-      const response = await fetch(`http://localhost:3001/api/groups/user/${userId}`, {
+      const response = await fetch(`https://ai-tripvisorupdated-1.onrender.com/api/groups/user/${userId}`, {
         headers
       });
       
@@ -155,7 +155,7 @@ const UserProfile = () => {
   const fetchMyBlogs = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:3001/api/blogs/my-blogs`, {
+      const response = await fetch(`https://ai-tripvisorupdated-1.onrender.com/api/blogs/my-blogs`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -173,7 +173,7 @@ const UserProfile = () => {
   const fetchMyGroups = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:3001/api/groups/my-groups`, {
+      const response = await fetch(`https://ai-tripvisorupdated-1.onrender.com/api/groups/my-groups`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -191,7 +191,7 @@ const UserProfile = () => {
   const checkMutualStatus = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:3001/api/users/${userId}/mutual-status`, {
+      const response = await fetch(`https://ai-tripvisorupdated-1.onrender.com/api/users/${userId}/mutual-status`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -213,8 +213,8 @@ const UserProfile = () => {
       
       // If user is viewing their own profile, use regular followers endpoint
       const endpoint = isOwnProfile 
-        ? `http://localhost:3001/api/users/${userId}/followers`
-        : `http://localhost:3001/api/users/${userId}/followers/mutual`;
+        ? `https://ai-tripvisorupdated-1.onrender.com/api/users/${userId}/followers`
+        : `https://ai-tripvisorupdated-1.onrender.com/api/users/${userId}/followers/mutual`;
       
       const response = await fetch(endpoint, {
         headers: {
@@ -249,8 +249,8 @@ const UserProfile = () => {
       
       // If user is viewing their own profile, use regular following endpoint
       const endpoint = isOwnProfile 
-        ? `http://localhost:3001/api/users/${userId}/following`
-        : `http://localhost:3001/api/users/${userId}/following/mutual`;
+        ? `https://ai-tripvisorupdated-1.onrender.com/api/users/${userId}/following`
+        : `https://ai-tripvisorupdated-1.onrender.com/api/users/${userId}/following/mutual`;
       
       const response = await fetch(endpoint, {
         headers: {
@@ -286,7 +286,7 @@ const UserProfile = () => {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:3001/api/users/${userId}/follow`, {
+      const response = await fetch(`https://ai-tripvisorupdated-1.onrender.com/api/users/${userId}/follow`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
