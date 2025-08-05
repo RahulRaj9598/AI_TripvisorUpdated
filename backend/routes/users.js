@@ -6,7 +6,6 @@ import { authenticateUser, optionalAuth, generateJWTToken } from '../middleware/
 import { uploadSingle, handleUploadError } from '../middleware/upload.js';
 import { v2 as cloudinary } from 'cloudinary';
 import axios from 'axios';
-import { getAuth } from 'firebase-admin/auth';
 
 const router = express.Router();
 
@@ -35,16 +34,24 @@ router.post('/auth', async (req, res) => {
     let userInfo;
     
     try {
-      // First try to verify as Firebase ID token
-      const auth = getAuth();
-      const decodedToken = await auth.verifyIdToken(token);
+      // Use Google OAuth for token verification
+      const response = await axios.get(
+        'https://www.googleapis.com/oauth2/v1/userinfo',
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            Accept: "application/json",
+          },
+        }
+      );
+      
       userInfo = {
-        uid: decodedToken.uid,
-        email: decodedToken.email,
-        name: decodedToken.name,
-        picture: decodedToken.picture
+        uid: response.data.id,
+        email: response.data.email,
+        name: response.data.name,
+        picture: response.data.picture
       };
-      console.log('Firebase token verified successfully');
+      console.log('Google OAuth verification successful');
     } catch (firebaseError) {
       console.log('Firebase verification failed, trying Google OAuth...');
       // If Firebase verification fails, try Google OAuth

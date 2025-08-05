@@ -3,7 +3,6 @@ import cors from "cors";
 import dotenv from "dotenv";
 import axios from "axios";
 import mongoose from "mongoose";
-import admin from "firebase-admin";
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -17,16 +16,7 @@ dotenv.config(); // Load environment variables
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Initialize Firebase Admin
-if (!admin.apps.length) {
-  admin.initializeApp({
-    credential: admin.credential.cert({
-      projectId: process.env.FIREBASE_PROJECT_ID,
-      clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
-      privateKey: process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n')
-    })
-  });
-}
+// Using Google OAuth for authentication (no Firebase needed)
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI)
