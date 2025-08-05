@@ -1,96 +1,21 @@
-// import React from 'react'
-// import {Button} from "@/components/ui/button"
-// import { Link } from 'react-router-dom'
-// function Hero() {
-//   return (
-//     <div className='flex flex-col items-center mx-56 gap-9'>
-//       <h1 className='font-extrabold text-[50px] text-center mt-16 '>
-//        <span className='text-orange-600'>Discover Your Next Adventure with AI:</span> Personalized Iternaries
-//       </h1>
-//       <p className='text-xl text-gray-500 text-center'>Discover the perfect itinerary in seconds! Our AI-powered trip planner customizes your travel experience based on your preferences, budget, and schedule. Whether you're exploring hidden gems or must-see attractions, let smart recommendations make your journey seamless and unforgettable. Start planning today! 🚀</p>
-//       <Link to={'/create-trip'}>
-//       <Button className='bg-orange-600 text-white cursor-pointer hover:bg-green-500 transition-all hover:scale-105'>Get Started, It's Free</Button>
-//       </Link>
-      
-//     </div>
-//   )
-// }
-
-// export default Hero
-
-// import React from 'react'
-// import { Button } from "@/components/ui/button"
-// import { Link } from 'react-router-dom'
-
-// function Hero() {
-//   return (
-//     <div className="relative overflow-hidden bg-white">
-//       <div className="mx-auto max-w-7xl">
-//         <div className="relative z-10 pb-8 sm:pb-16 md:pb-20 lg:pb-28 xl:pb-32">
-//           <main className="mx-auto mt-10 max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
-//             <div className="sm:text-center lg:text-left">
-//               <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
-//                 <span className="block text-orange-600 xl:inline">Discover Your Next Adventure</span>{' '}
-//                 <span className="block xl:inline">with AI-Powered Travel Planning</span>
-//               </h1>
-//               <p className="mt-3 text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0">
-//                 Create personalized itineraries in seconds! Our AI customizes your perfect trip based on:
-//               </p>
-//               <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 md:mt-8">
-//                 <div className="flex items-center space-x-2">
-//                   <svg className="h-6 w-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-//                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-//                   </svg>
-//                   <span className="text-gray-600">Your Budget</span>
-//                 </div>
-//                 <div className="flex items-center space-x-2">
-//                   <svg className="h-6 w-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-//                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-//                   </svg>
-//                   <span className="text-gray-600">Time Frame</span>
-//                 </div>
-//                 <div className="flex items-center space-x-2">
-//                   <svg className="h-6 w-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-//                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-//                   </svg>
-//                   <span className="text-gray-600">Preferences</span>
-//                 </div>
-//               </div>
-//               <div className="mt-8 sm:mt-12">
-//                 <Link to="/create-trip">
-//                   <Button className="group relative w-full sm:w-auto rounded-md bg-orange-600 py-3 px-8 text-base font-medium text-white hover:bg-green-500 transition-all duration-300 hover:scale-105 hover:shadow-lg">
-//                     Get Started, It's Free
-//                     <svg className="ml-2 -mr-1 h-5 w-5 inline-block transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-//                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-//                     </svg>
-//                   </Button>
-//                 </Link>
-//               </div>
-//             </div>
-//           </main>
-          
-//           {/* Decorative blob */}
-//           <div className="absolute inset-y-0 right-0 w-1/2 opacity-50">
-//             <svg className="h-56 w-full text-orange-100 sm:h-72 md:h-96" fill="currentColor" viewBox="0 0 100 100">
-//               <path d="M50 0C77.6142 0 100 22.3858 100 50C100 77.6142 77.6142 100 50 100C22.3858 100 0 77.6142 0 50C0 22.3858 22.3858 0 50 0ZM50 10C27.9086 10 10 27.9086 10 50C10 72.0914 27.9086 90 50 90C72.0914 90 90 72.0914 90 50C90 27.9086 72.0914 10 50 10Z"/>
-//             </svg>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   )
-// }
-
-// export default Hero
-
-
-
-
-
 import React from 'react'
 import { Button } from "@/components/ui/button"
 import { Link } from 'react-router-dom'
 import { motion } from "framer-motion"
+import { 
+  MapPin, 
+  Users, 
+  FileText, 
+  Heart, 
+  Share2, 
+  Edit3, 
+  User, 
+  Globe,
+  Sparkles,
+  MessageCircle,
+  Camera,
+  Star
+} from 'lucide-react'
 
 function Hero() {
   return (
@@ -114,63 +39,164 @@ function Hero() {
                 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl"
               >
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-orange-400 xl:inline">
-                  Discover Your Next Adventure
+                  Your Complete Travel Ecosystem
                 </span>{' '}
-                <span className="block xl:inline mt-2">with AI-Powered Travel Planning</span>
+                <span className="block xl:inline mt-2">AI-Powered Planning + Social Discovery</span>
               </motion.h1>
 
+              <motion.p 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5 }}
+                className="mt-6 text-lg text-gray-600 max-w-3xl"
+              >
+                Experience the future of travel planning with AI-generated itineraries, share your adventures through blogs, 
+                join travel communities, and connect with fellow explorers. Everything you need for your next journey in one place.
+              </motion.p>
+
+              {/* Feature Grid */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.7 }}
+                className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+              >
+                {/* AI Trip Planning */}
+                <div className="bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-sm border border-orange-100 hover:shadow-md transition-all">
+                  <div className="flex items-center space-x-3 mb-4">
+                    <div className="p-2 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg">
+                      <Sparkles className="h-6 w-6 text-white" />
+                    </div>
+                    <h3 className="font-semibold text-lg">AI Trip Planning</h3>
+                  </div>
+                  <p className="text-gray-600 text-sm">Get personalized itineraries in seconds based on your budget, preferences, and schedule.</p>
+                </div>
+
+                {/* Travel Blogs */}
+                <div className="bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-sm border border-orange-100 hover:shadow-md transition-all">
+                  <div className="flex items-center space-x-3 mb-4">
+                    <div className="p-2 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg">
+                      <FileText className="h-6 w-6 text-white" />
+                    </div>
+                    <h3 className="font-semibold text-lg">Travel Blogs</h3>
+                  </div>
+                  <p className="text-gray-600 text-sm">Share your adventures, read inspiring stories, and discover hidden gems from fellow travelers.</p>
+                </div>
+
+                {/* Travel Groups */}
+                <div className="bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-sm border border-orange-100 hover:shadow-md transition-all">
+                  <div className="flex items-center space-x-3 mb-4">
+                    <div className="p-2 bg-gradient-to-r from-green-500 to-green-600 rounded-lg">
+                      <Users className="h-6 w-6 text-white" />
+                    </div>
+                    <h3 className="font-semibold text-lg">Travel Groups</h3>
+                  </div>
+                  <p className="text-gray-600 text-sm">Join communities, discuss destinations, and find travel buddies for your next adventure.</p>
+                </div>
+
+                {/* User Profiles */}
+                <div className="bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-sm border border-orange-100 hover:shadow-md transition-all">
+                  <div className="flex items-center space-x-3 mb-4">
+                    <div className="p-2 bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg">
+                      <User className="h-6 w-6 text-white" />
+                    </div>
+                    <h3 className="font-semibold text-lg">Rich Profiles</h3>
+                  </div>
+                  <p className="text-gray-600 text-sm">Showcase your travel history, upload photos, and connect with other travelers.</p>
+                </div>
+
+                {/* Social Features */}
+                <div className="bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-sm border border-orange-100 hover:shadow-md transition-all">
+                  <div className="flex items-center space-x-3 mb-4">
+                    <div className="p-2 bg-gradient-to-r from-pink-500 to-pink-600 rounded-lg">
+                      <Heart className="h-6 w-6 text-white" />
+                    </div>
+                    <h3 className="font-semibold text-lg">Social Features</h3>
+                  </div>
+                  <p className="text-gray-600 text-sm">Like, comment, share, and follow other travelers. Build your travel network.</p>
+                </div>
+
+                {/* Global Community */}
+                <div className="bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-sm border border-orange-100 hover:shadow-md transition-all">
+                  <div className="flex items-center space-x-3 mb-4">
+                    <div className="p-2 bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-lg">
+                      <Globe className="h-6 w-6 text-white" />
+                    </div>
+                    <h3 className="font-semibold text-lg">Global Community</h3>
+                  </div>
+                  <p className="text-gray-600 text-sm">Connect with travelers worldwide, discover new cultures, and expand your horizons.</p>
+                </div>
+              </motion.div>
+
+              {/* Key Features List */}
               <motion.div 
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 0.6 }}
-                className="mt-8 flex flex-wrap gap-4 sm:justify-center lg:justify-start"
+                transition={{ delay: 1.0 }}
+                className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4"
               >
-                <div className="flex items-center space-x-2 bg-white/80 backdrop-blur-sm p-3 rounded-xl shadow-sm">
-                  <span className="text-4xl">🎯</span>
-                  <div>
-                    <h3 className="font-semibold">Smart Planning</h3>
-                    <p className="text-sm text-gray-600">AI-powered itineraries</p>
-                  </div>
+                <div className="flex items-center space-x-2 text-sm">
+                  <CheckIcon className="h-4 w-4 text-green-500" />
+                  <span>AI-Powered Planning</span>
                 </div>
-                <div className="flex items-center space-x-2 bg-white/80 backdrop-blur-sm p-3 rounded-xl shadow-sm">
-                  <span className="text-4xl">⚡</span>
-                  <div>
-                    <h3 className="font-semibold">Instant Results</h3>
-                    <p className="text-sm text-gray-600">Plans in seconds</p>
-                  </div>
+                <div className="flex items-center space-x-2 text-sm">
+                  <CheckIcon className="h-4 w-4 text-green-500" />
+                  <span>Blog Creation & Sharing</span>
                 </div>
-                <div className="flex items-center space-x-2 bg-white/80 backdrop-blur-sm p-3 rounded-xl shadow-sm">
-                  <span className="text-4xl">🎨</span>
-                  <div>
-                    <h3 className="font-semibold">Personalized</h3>
-                    <p className="text-sm text-gray-600">Tailored to you</p>
-                  </div>
+                <div className="flex items-center space-x-2 text-sm">
+                  <CheckIcon className="h-4 w-4 text-green-500" />
+                  <span>Travel Communities</span>
                 </div>
-              </motion.div> 
+                <div className="flex items-center space-x-2 text-sm">
+                  <CheckIcon className="h-4 w-4 text-green-500" />
+                  <span>Photo Uploads</span>
+                </div>
+                <div className="flex items-center space-x-2 text-sm">
+                  <CheckIcon className="h-4 w-4 text-green-500" />
+                  <span>Like & Comment System</span>
+                </div>
+                <div className="flex items-center space-x-2 text-sm">
+                  <CheckIcon className="h-4 w-4 text-green-500" />
+                  <span>User Profiles</span>
+                </div>
+                <div className="flex items-center space-x-2 text-sm">
+                  <CheckIcon className="h-4 w-4 text-green-500" />
+                  <span>Follow System</span>
+                </div>
+                <div className="flex items-center space-x-2 text-sm">
+                  <CheckIcon className="h-4 w-4 text-green-500" />
+                  <span>Real-time Updates</span>
+                </div>
+              </motion.div>
 
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.9 }}
-                className="mt-12 sm:flex sm:justify-center lg:justify-start"
+                transition={{ delay: 1.2 }}
+                className="mt-12 sm:flex sm:justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4"
               >
                 <Link to="/create-trip">
                   <Button className="group relative w-full sm:w-auto rounded-xl bg-gradient-to-r from-orange-600 to-orange-500 py-4 px-8 text-lg font-medium text-white hover:from-green-500 hover:to-green-400 transition-all duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">
-                    Start Your Journey
+                    Start Planning Your Trip
                     <svg className="ml-2 -mr-1 h-5 w-5 inline-block transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
                   </Button>
                 </Link>
                 
-                <motion.div 
-                  whileHover={{ scale: 1.05 }}
-                  className="mt-4 sm:mt-0 sm:ml-4"
-                >
-                  <a href="#how-it-works" className="inline-flex items-center px-6 py-4 border border-transparent text-base font-medium rounded-xl text-orange-600 bg-orange-50 hover:bg-orange-100 transition-colors">
-                    Learn More
-                  </a>
-                </motion.div>
+                <Link to="/blogs">
+                  <Button variant="outline" className="group relative w-full sm:w-auto rounded-xl py-4 px-8 text-lg font-medium border-orange-600 text-orange-600 hover:bg-orange-50 transition-all duration-300 hover:scale-105">
+                    Explore Travel Blogs
+                    <MessageCircle className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
+
+                <Link to="/groups">
+                  <Button variant="outline" className="group relative w-full sm:w-auto rounded-xl py-4 px-8 text-lg font-medium border-green-600 text-green-600 hover:bg-green-50 transition-all duration-300 hover:scale-105">
+                    Join Travel Groups
+                    <Users className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
               </motion.div>
             </div>
           </motion.main>
@@ -181,6 +207,9 @@ function Hero() {
           </div>
           <div className="absolute bottom-1/4 left-10 animate-float-delayed">
             <div className="w-32 h-32 bg-gradient-to-br from-green-400 to-green-600 rounded-full opacity-20"></div>
+          </div>
+          <div className="absolute top-1/2 right-1/4 animate-float-slow">
+            <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full opacity-20"></div>
           </div>
         </div>
       </div>
@@ -198,5 +227,12 @@ function Hero() {
     </div>
   )
 }
+
+// Check icon component
+const CheckIcon = ({ className }) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+  </svg>
+)
 
 export default Hero

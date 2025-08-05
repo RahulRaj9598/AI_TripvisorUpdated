@@ -1,2 +1,8 @@
 node_modules
 .env
+
+# Documentation files
+VISUAL_ARCHITECTURE.md
+SETUP_INSTRUCTIONS.md
+README.md
+ARCHITECTURE_FLOWCHART.md
