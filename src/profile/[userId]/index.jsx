@@ -41,6 +41,32 @@ const UserProfile = () => {
   const [myGroups, setMyGroups] = useState([]);
   const navigate = useNavigate();
 
+  // Helper function to format social media links
+  const formatSocialLink = (platform, value) => {
+    if (!value) return '';
+    
+    // If it's already a full URL, return as-is
+    if (value.startsWith('http://') || value.startsWith('https://')) {
+      return value;
+    }
+    
+    // Remove @ symbol if present
+    const cleanValue = value.replace('@', '');
+    
+    switch (platform) {
+      case 'instagram':
+        return `https://instagram.com/${cleanValue}`;
+      case 'twitter':
+        return `https://twitter.com/${cleanValue}`;
+      case 'facebook':
+        return `https://facebook.com/${cleanValue}`;
+      case 'linkedin':
+        return `https://linkedin.com/in/${cleanValue}`;
+      default:
+        return value;
+    }
+  };
+
   useEffect(() => {
     const fetchUserData = async () => {
       try {
@@ -456,22 +482,46 @@ const UserProfile = () => {
           {user.socialLinks && Object.values(user.socialLinks).some(link => link) && (
             <div className="flex gap-4 mt-4 pt-4 border-t">
               {user.socialLinks.instagram && (
-                <a href={user.socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="text-pink-600 hover:text-pink-700">
+                <a 
+                  href={formatSocialLink('instagram', user.socialLinks.instagram)} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-pink-600 hover:text-pink-700 transition-colors"
+                  title="Instagram Profile"
+                >
                   <Instagram className="w-5 h-5" />
                 </a>
               )}
               {user.socialLinks.twitter && (
-                <a href={user.socialLinks.twitter} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-700">
+                <a 
+                  href={formatSocialLink('twitter', user.socialLinks.twitter)} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-blue-600 hover:text-blue-700 transition-colors"
+                  title="Twitter Profile"
+                >
                   <Twitter className="w-5 h-5" />
                 </a>
               )}
               {user.socialLinks.facebook && (
-                <a href={user.socialLinks.facebook} target="_blank" rel="noopener noreferrer" className="text-blue-800 hover:text-blue-900">
+                <a 
+                  href={formatSocialLink('facebook', user.socialLinks.facebook)} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-blue-800 hover:text-blue-900 transition-colors"
+                  title="Facebook Profile"
+                >
                   <Facebook className="w-5 h-5" />
                 </a>
               )}
               {user.socialLinks.linkedin && (
-                <a href={user.socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:text-blue-800">
+                <a 
+                  href={formatSocialLink('linkedin', user.socialLinks.linkedin)} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-blue-700 hover:text-blue-800 transition-colors"
+                  title="LinkedIn Profile"
+                >
                   <Linkedin className="w-5 h-5" />
                 </a>
               )}

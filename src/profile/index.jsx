@@ -60,6 +60,32 @@ const Profile = () => {
     'cultural', 'adventure', 'luxury', 'budget', 'family', 'solo'
   ];
 
+  // Helper function to format social media links
+  const formatSocialLink = (platform, value) => {
+    if (!value) return '';
+    
+    // If it's already a full URL, return as-is
+    if (value.startsWith('http://') || value.startsWith('https://')) {
+      return value;
+    }
+    
+    // Remove @ symbol if present
+    const cleanValue = value.replace('@', '');
+    
+    switch (platform) {
+      case 'instagram':
+        return `https://instagram.com/${cleanValue}`;
+      case 'twitter':
+        return `https://twitter.com/${cleanValue}`;
+      case 'facebook':
+        return `https://facebook.com/${cleanValue}`;
+      case 'linkedin':
+        return `https://linkedin.com/in/${cleanValue}`;
+      default:
+        return value;
+    }
+  };
+
   useEffect(() => {
     fetchProfile();
   }, []);
@@ -558,22 +584,46 @@ const Profile = () => {
                 ) : (
                   <div className="flex gap-4">
                     {profileData.socialLinks.instagram && (
-                      <a href={profileData.socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="text-pink-600 hover:text-pink-700">
+                      <a 
+                        href={formatSocialLink('instagram', profileData.socialLinks.instagram)} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="text-pink-600 hover:text-pink-700 transition-colors"
+                        title="Instagram Profile"
+                      >
                         <Instagram className="w-5 h-5" />
                       </a>
                     )}
                     {profileData.socialLinks.twitter && (
-                      <a href={profileData.socialLinks.twitter} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-700">
+                      <a 
+                        href={formatSocialLink('twitter', profileData.socialLinks.twitter)} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="text-blue-600 hover:text-blue-700 transition-colors"
+                        title="Twitter Profile"
+                      >
                         <Twitter className="w-5 h-5" />
                       </a>
                     )}
                     {profileData.socialLinks.facebook && (
-                      <a href={profileData.socialLinks.facebook} target="_blank" rel="noopener noreferrer" className="text-blue-800 hover:text-blue-900">
+                      <a 
+                        href={formatSocialLink('facebook', profileData.socialLinks.facebook)} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="text-blue-800 hover:text-blue-900 transition-colors"
+                        title="Facebook Profile"
+                      >
                         <Facebook className="w-5 h-5" />
                       </a>
                     )}
                     {profileData.socialLinks.linkedin && (
-                      <a href={profileData.socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:text-blue-800">
+                      <a 
+                        href={formatSocialLink('linkedin', profileData.socialLinks.linkedin)} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="text-blue-700 hover:text-blue-800 transition-colors"
+                        title="LinkedIn Profile"
+                      >
                         <Linkedin className="w-5 h-5" />
                       </a>
                     )}
