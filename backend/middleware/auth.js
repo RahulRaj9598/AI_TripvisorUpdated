@@ -154,32 +154,25 @@ export const optionalAuth = async (req, res, next) => {
     let userInfo;
     
     try {
-      // First try to verify as Firebase ID token
-      const decodedToken = await auth.verifyIdToken(token);
+      // For Google OAuth, we use the access token directly
+      const response = await axios.get(
+        'https://www.googleapis.com/oauth2/v1/userinfo',
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            Accept: "application/json",
+          },
+        }
+      );
+      
       userInfo = {
-        uid: decodedToken.uid
+        uid: response.data.id
       };
-    } catch (firebaseError) {
-      // If Firebase verification fails, try Google OAuth
-      try {
-        const response = await axios.get(
-          'https://www.googleapis.com/oauth2/v1/userinfo',
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-              Accept: "application/json",
-            },
-          }
-        );
-        
-        userInfo = {
-          uid: response.data.id
-        };
-      } catch (googleError) {
-        console.error('Optional auth - Google OAuth verification failed:', googleError.response?.data || googleError.message);
-        req.user = null;
-        return next();
-      }
+      console.log('Optional auth - Google OAuth verification successful');
+    } catch (googleError) {
+      console.error('Optional auth - Google OAuth verification failed:', googleError.response?.data || googleError.message);
+      req.user = null;
+      return next();
     }
 
     // Find user in MongoDB
