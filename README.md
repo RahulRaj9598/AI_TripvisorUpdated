@@ -162,8 +162,6 @@ AI_Tripvisor/
 
 The application uses a modern, responsive design with:
 - **Mobile-first approach** for optimal mobile experience
-- **Dark/Light theme support** with system preference detection
-- **Accessible components** built with Radix UI primitives
 - **Smooth animations** using Framer Motion
 - **Consistent design tokens** with Tailwind CSS
 
