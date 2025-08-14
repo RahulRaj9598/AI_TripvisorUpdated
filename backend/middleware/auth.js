@@ -18,7 +18,7 @@ const generateJWTToken = (user) => {
       firebaseUid: user.firebaseUid 
     },
     JWT_SECRET,
-    { expiresIn: '7d' } // 7 days instead of 1 hour
+    { expiresIn: '1d' } // 1 day instead of 1 hour
   );
 };
 
