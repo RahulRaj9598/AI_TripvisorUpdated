@@ -24,13 +24,23 @@ export const createGroup = async (req, res) => {
     // Upload cover image to Cloudinary if provided
     let coverImage = {};
     if (req.file) {
-      const result = await cloudinary.uploader.upload(req.file.path, {
-        folder: 'tripvisor-groups',
-        transformation: [
-          { width: 800, height: 400, crop: 'fill' },
-          { quality: 'auto' }
-        ]
+      // Upload directly from memory buffer to Cloudinary
+      const result = await new Promise((resolve, reject) => {
+        cloudinary.uploader.upload_stream(
+          {
+            folder: 'tripvisor-groups',
+            transformation: [
+              { width: 800, height: 400, crop: 'fill' },
+              { quality: 'auto' }
+            ]
+          },
+          (error, result) => {
+            if (error) reject(error);
+            else resolve(result);
+          }
+        ).end(req.file.buffer);
       });
+      
       coverImage = {
         url: result.secure_url,
         publicId: result.public_id

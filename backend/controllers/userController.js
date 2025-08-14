@@ -188,13 +188,23 @@ export const updateUserProfile = async (req, res) => {
         await cloudinary.uploader.destroy(publicId);
       }
 
-      const result = await cloudinary.uploader.upload(req.file.path, {
-        folder: 'tripvisor-profiles',
-        transformation: [
-          { width: 400, height: 400, crop: 'fill' },
-          { quality: 'auto' }
-        ]
+      // Upload directly from memory buffer to Cloudinary
+      const result = await new Promise((resolve, reject) => {
+        cloudinary.uploader.upload_stream(
+          {
+            folder: 'tripvisor-profiles',
+            transformation: [
+              { width: 400, height: 400, crop: 'fill' },
+              { quality: 'auto' }
+            ]
+          },
+          (error, result) => {
+            if (error) reject(error);
+            else resolve(result);
+          }
+        ).end(req.file.buffer);
       });
+      
       user.customPhotoURL = result.secure_url;
     }
 

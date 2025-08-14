@@ -25,13 +25,23 @@ export const createBlog = async (req, res) => {
     const images = [];
     if (req.files && req.files.length > 0) {
       for (const file of req.files) {
-        const result = await cloudinary.uploader.upload(file.path, {
-          folder: 'tripvisor-blogs',
-          transformation: [
-            { width: 800, height: 600, crop: 'fill' },
-            { quality: 'auto' }
-          ]
+        // Upload directly from memory buffer to Cloudinary
+        const result = await new Promise((resolve, reject) => {
+          cloudinary.uploader.upload_stream(
+            {
+              folder: 'tripvisor-blogs',
+              transformation: [
+                { width: 800, height: 600, crop: 'fill' },
+                { quality: 'auto' }
+              ]
+            },
+            (error, result) => {
+              if (error) reject(error);
+              else resolve(result);
+            }
+          ).end(file.buffer);
         });
+        
         images.push({
           url: result.secure_url,
           publicId: result.public_id
@@ -219,13 +229,23 @@ export const updateBlog = async (req, res) => {
     const newImages = [];
     if (req.files && req.files.length > 0) {
       for (const file of req.files) {
-        const result = await cloudinary.uploader.upload(file.path, {
-          folder: 'tripvisor-blogs',
-          transformation: [
-            { width: 800, height: 600, crop: 'fill' },
-            { quality: 'auto' }
-          ]
+        // Upload directly from memory buffer to Cloudinary
+        const result = await new Promise((resolve, reject) => {
+          cloudinary.uploader.upload_stream(
+            {
+              folder: 'tripvisor-blogs',
+              transformation: [
+                { width: 800, height: 600, crop: 'fill' },
+                { quality: 'auto' }
+              ]
+            },
+            (error, result) => {
+              if (error) reject(error);
+              else resolve(result);
+            }
+          ).end(file.buffer);
         });
+        
         newImages.push({
           url: result.secure_url,
           publicId: result.public_id
